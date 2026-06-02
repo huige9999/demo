@@ -6,39 +6,33 @@ class ErrorLogFilter extends Transform {
     constructor() {
         super();
         this.leftOver = '';
-        this.timer = null;
     }
 
     _transform(chunk, encoding, callback) {
-        const data = this.leftOver + chunk.toString();
-
-        let index = 0;
-
-        const pushNext = () => {
-            if (index >= data.length) {
-                // 全部推送完毕，通知流继续
-                this.leftOver = '';
-                callback();
-                return;
-            }
-
-            // 每次推送 5 个字符
-            this.push(data.slice(index, index + 5));
-            index += 5;
-
-            // 延迟 100ms 后推送下一组
-            this.timer = setTimeout(pushNext, 100);
-        };
-
-        // 开始推送
-        pushNext();
+        // 1. chunk 转字符串
+        const text = chunk.toString();
+        // 2. 拼接 leftover
+        const data = this.leftOver + text;
+        // 3. 按换行符切割
+        const lines = data.split('\n');
+        // 4. 保存最后一个可能不完整的半行
+        this.leftOver = lines.pop();
+        // 5. 处理完整行，筛选 [ERROR]
+        const errorLines = lines.filter(line => line.includes('[ERROR]'));
+        // 6. this.push(...)
+        if (errorLines.length > 0) {
+            this.push(errorLines.join('\n') + '\n');
+        }
+        // 7. callback()
+        callback();
     }
 
     _flush(callback) {
-        // 清理定时器
-        if (this.timer) {
-            clearTimeout(this.timer);
+        // 处理最后残留的 leftover
+        if (this.leftOver && this.leftOver.includes('[ERROR]')) {
+            this.push(this.leftOver + '\n');
         }
+        this.leftOver = '';
         callback();
     }
 }

@@ -2,6 +2,6 @@
 
 ## 进度
 - [x] NodeES
-- [ ] NodeIO
-- [ ] NodeInnerModule
-- [ ] NodeGlobal
+- [x] NodeIO
+- [x] NodeInnerModule
+- [x] NodeGlobal
