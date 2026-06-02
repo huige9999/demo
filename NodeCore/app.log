@@ -1,0 +1,786 @@
+[INFO] 服务启动成功
+[ERROR] 数据库连接失败
+[WARN] 接口响应过慢
+[INFO] 用户 vichel 登录成功
+[ERROR] 支付回调异常
+[INFO] 请求结束
+[INFO] 系统初始化完成，监听端口 3000
+[DEBUG] 接收请求 GET /api/users - 127.0.0.1
+[INFO] 用户查询成功，返回 25 条记录
+[WARN] 内存使用率超过 75%，当前: 76%
+[ERROR] Redis 连接超时，尝试重连中...
+[INFO] 任务队列 worker-1 启动成功
+[DEBUG] 处理订单 #12345，状态: pending
+[INFO] 订单创建成功，订单ID: ORD-2024-001
+[WARN] 第三方API响应时间过长: 2500ms
+[ERROR] 文件上传失败: 文件过大 (15MB)
+[INFO] 用户 admin 登录成功
+[DEBUG] 缓存命中，key: user_profile_100
+[INFO] 数据库备份任务开始执行
+[WARN] 磁盘空间不足，剩余: 5GB
+[ERROR] JWT token 验证失败
+[INFO] 邮件发送成功，收件人: user@example.com
+[DEBUG] 查询耗时 120ms，SQL: SELECT * FROM products
+[WARN] API 请求频率接近限制，已处理: 950/1000
+[ERROR] 支付网关不可用，降级处理
+[INFO] 定时任务执行完成: 清理过期日志
+[DEBUG] WebSocket 连接建立，client_id: ws_456
+[INFO] 用户注销成功，user_id: 789
+[WARN] 未知请求路径: /api/legacy/endpoint
+[ERROR] 数据库查询超时 (30s)
+[INFO] 文件清理完成，释放空间: 2.3GB
+[DEBUG] 缓存更新，key: product_categories
+[INFO] 批量导入完成，成功: 450，失败: 5
+[WARN] 重复登录尝试，user_id: 123
+[ERROR] CSV 解析错误: 第 102 行格式错误
+[INFO] 索引重建完成，表: orders
+[DEBUG] 请求参数验证通过
+[INFO] 用户注册成功，user_id: 10001
+[WARN] 敏感操作: 用户修改密码
+[ERROR] 外部服务调用失败: payment_service
+[INFO] 系统健康检查通过
+[DEBUG] 分页查询，page: 1, limit: 20
+[INFO] 会话续期成功，session_id: sess_abc123
+[WARN] 检测到爬虫行为，IP: 192.168.1.100
+[ERROR] 数据完整性校验失败
+[INFO] 促销活动已激活，code: SUMMER2024
+[DEBUG] 调用外部API: https://api.example.com/data
+[INFO] 数据同步完成，新增记录: 1250
+[WARN] 配置文件热更新，重启部分服务
+[ERROR] 内存泄漏检测，模块: auth_service
+[INFO] 用户资料更新成功，user_id: 5432
+[DEBUG] 限流检查通过，token: api_key_xyz
+[INFO] 退款处理完成，order_id: ORD-9876
+[WARN] 依赖服务响应变慢: notification_service
+[ERROR] 队列消息处理失败，重试次数: 3/5
+[INFO] 系统升级完成，版本: v2.5.0
+[DEBUG] 访问令牌刷新成功
+[INFO] 管理员操作日志: 删除用户 #567
+[WARN] SSL证书即将过期，剩余天数: 7
+[ERROR] 邮件服务连接失败
+[INFO] 搜索索引更新完成
+[DEBUG] 请求头解析: Authorization: Bearer ***
+[INFO] 用户偏好设置已保存
+[WARN] 账户余额不足，user_id: 333
+[ERROR] JSON 解析错误: Unexpected token
+[INFO] 报表生成完成: monthly_sales_2024.pdf
+[DEBUG] 中间件执行: rate_limiter
+[INFO] 批量通知发送完成，成功: 89
+[WARN] API 版本已弃用: v1，请使用 v2
+[ERROR] 数据库死锁检测，回滚事务
+[INFO] 账户激活成功，email: newuser@test.com
+[DEBUG] 响应压缩: gzip，原始: 50KB
+[INFO] 系统负载正常: CPU 45%, MEM 62%
+[WARN] 检测到可疑登录尝试
+[ERROR] 文件权限错误: /var/log/app.log
+[INFO] A/B 测试配置更新，实验: exp_new_ui
+[DEBUG] 数据库连接池状态: 8/20
+[INFO] 用户订阅续费成功，plan: premium
+[WARN] 缓存预热中，预计完成: 30s
+[ERROR] API Gateway 超时
+[INFO] 队列任务已重新分配
+[DEBUG] Session 存储: 内存缓存
+[INFO] 第三方回调验证通过，source: stripe
+[WARN] 请求体过大: 2MB
+[ERROR] 域名解析失败: api.backup.com
+[INFO] 用户迁移完成，从旧系统迁移
+[DEBUG] SQL 执行计划优化
+[INFO] 推荐系统更新完成
+[WARN] 检测到重复请求，request_id: req_123
+[ERROR] 数据一致性检查失败
+[INFO] 定时任务调度完成: send_daily_report
+[DEBUG] 响应缓存失效，key: home_page_data
+[INFO] 系统维护模式已关闭
+[WARN] 监控告警恢复: CPU_NORMAL
+[ERROR] WebSocket 连接异常断开
+[INFO] 用户积分更新成功，+50分
+[DEBUG] 请求追踪: trace_id=abc123xyz
+[INFO] 批量操作完成: 更新库存
+[WARN] API 配额即将耗尽，剩余: 5%
+[ERROR] 交易验证失败: 签名不匹配
+[INFO] 数据归档完成，归档日期: 2024-05-01
+[DEBUG] 权限检查通过: role: admin
+[INFO] 用户反馈已提交，ticket_id: TK-4567
+[WARN] 异步任务延迟处理，队列深度: 150
+[ERROR] 支付渠道不可用: alipay
+[INFO] 系统自检完成，所有模块正常
+[DEBUG] 请求去重: 指纹: fp_7d8f9e
+[INFO] 产品目录更新完成
+[WARN] 并发请求数接近上限
+[ERROR] 缓存雪崩检测
+[INFO] 数据库迁移完成，版本: 2024052001
+[DEBUG] 响应时间: p50=80ms, p95=250ms, p99=500ms
+[INFO] 用户导出任务完成，records: 10000
+[WARN] 存储桶访问权限变更
+[ERROR] 定时任务执行失败: job: cleanup_temp
+[INFO] API 文档更新完成
+[DEBUG] 用户会话数量: 1,234
+[INFO] 批量消息推送成功
+[WARN] 检测到 SQL 注入尝试，已拦截
+[ERROR] 主从同步延迟，lag: 5s
+[INFO] 系统重启完成，耗时: 12s
+[DEBUG] 中间件链: logger → auth → rate_limit
+[INFO] 优惠券核销完成，code: WELCOME2024
+[WARN] 日志写入延迟
+[ERROR] 数据库连接池耗尽
+[INFO] 用户分组更新完成
+[DEBUG] 请求大小: 15KB
+[INFO] 系统监控报告已发送
+[WARN] 备份服务响应慢
+[ERROR] Token 刷新失败: refresh_token无效
+[INFO] 数据恢复完成，恢复记录: 5,678
+[INFO] 服务启动成功
+[ERROR] 数据库连接失败
+[WARN] 接口响应过慢
+[INFO] 用户 vichel 登录成功
+[ERROR] 支付回调异常
+[INFO] 请求结束
+[INFO] 系统初始化完成，监听端口 3000
+[DEBUG] 接收请求 GET /api/users - 127.0.0.1
+[INFO] 用户查询成功，返回 25 条记录
+[WARN] 内存使用率超过 75%，当前: 76%
+[ERROR] Redis 连接超时，尝试重连中...
+[INFO] 任务队列 worker-1 启动成功
+[DEBUG] 处理订单 #12345，状态: pending
+[INFO] 订单创建成功，订单ID: ORD-2024-001
+[WARN] 第三方API响应时间过长: 2500ms
+[ERROR] 文件上传失败: 文件过大 (15MB)
+[INFO] 用户 admin 登录成功
+[DEBUG] 缓存命中，key: user_profile_100
+[INFO] 数据库备份任务开始执行
+[WARN] 磁盘空间不足，剩余: 5GB
+[ERROR] JWT token 验证失败
+[INFO] 邮件发送成功，收件人: user@example.com
+[DEBUG] 查询耗时 120ms，SQL: SELECT * FROM products
+[WARN] API 请求频率接近限制，已处理: 950/1000
+[ERROR] 支付网关不可用，降级处理
+[INFO] 定时任务执行完成: 清理过期日志
+[DEBUG] WebSocket 连接建立，client_id: ws_456
+[INFO] 用户注销成功，user_id: 789
+[WARN] 未知请求路径: /api/legacy/endpoint
+[ERROR] 数据库查询超时 (30s)
+[INFO] 文件清理完成，释放空间: 2.3GB
+[DEBUG] 缓存更新，key: product_categories
+[INFO] 批量导入完成，成功: 450，失败: 5
+[WARN] 重复登录尝试，user_id: 123
+[ERROR] CSV 解析错误: 第 102 行格式错误
+[INFO] 索引重建完成，表: orders
+[DEBUG] 请求参数验证通过
+[INFO] 用户注册成功，user_id: 10001
+[WARN] 敏感操作: 用户修改密码
+[ERROR] 外部服务调用失败: payment_service
+[INFO] 系统健康检查通过
+[DEBUG] 分页查询，page: 1, limit: 20
+[INFO] 会话续期成功，session_id: sess_abc123
+[WARN] 检测到爬虫行为，IP: 192.168.1.100
+[ERROR] 数据完整性校验失败
+[INFO] 促销活动已激活，code: SUMMER2024
+[DEBUG] 调用外部API: https://api.example.com/data
+[INFO] 数据同步完成，新增记录: 1250
+[WARN] 配置文件热更新，重启部分服务
+[ERROR] 内存泄漏检测，模块: auth_service
+[INFO] 用户资料更新成功，user_id: 5432
+[DEBUG] 限流检查通过，token: api_key_xyz
+[INFO] 退款处理完成，order_id: ORD-9876
+[WARN] 依赖服务响应变慢: notification_service
+[ERROR] 队列消息处理失败，重试次数: 3/5
+[INFO] 系统升级完成，版本: v2.5.0
+[DEBUG] 访问令牌刷新成功
+[INFO] 管理员操作日志: 删除用户 #567
+[WARN] SSL证书即将过期，剩余天数: 7
+[ERROR] 邮件服务连接失败
+[INFO] 搜索索引更新完成
+[DEBUG] 请求头解析: Authorization: Bearer ***
+[INFO] 用户偏好设置已保存
+[WARN] 账户余额不足，user_id: 333
+[ERROR] JSON 解析错误: Unexpected token
+[INFO] 报表生成完成: monthly_sales_2024.pdf
+[DEBUG] 中间件执行: rate_limiter
+[INFO] 批量通知发送完成，成功: 89
+[WARN] API 版本已弃用: v1，请使用 v2
+[ERROR] 数据库死锁检测，回滚事务
+[INFO] 账户激活成功，email: newuser@test.com
+[DEBUG] 响应压缩: gzip，原始: 50KB
+[INFO] 系统负载正常: CPU 45%, MEM 62%
+[WARN] 检测到可疑登录尝试
+[ERROR] 文件权限错误: /var/log/app.log
+[INFO] A/B 测试配置更新，实验: exp_new_ui
+[DEBUG] 数据库连接池状态: 8/20
+[INFO] 用户订阅续费成功，plan: premium
+[WARN] 缓存预热中，预计完成: 30s
+[ERROR] API Gateway 超时
+[INFO] 队列任务已重新分配
+[DEBUG] Session 存储: 内存缓存
+[INFO] 第三方回调验证通过，source: stripe
+[WARN] 请求体过大: 2MB
+[ERROR] 域名解析失败: api.backup.com
+[INFO] 用户迁移完成，从旧系统迁移
+[DEBUG] SQL 执行计划优化
+[INFO] 推荐系统更新完成
+[WARN] 检测到重复请求，request_id: req_123
+[ERROR] 数据一致性检查失败
+[INFO] 定时任务调度完成: send_daily_report
+[DEBUG] 响应缓存失效，key: home_page_data
+[INFO] 系统维护模式已关闭
+[WARN] 监控告警恢复: CPU_NORMAL
+[ERROR] WebSocket 连接异常断开
+[INFO] 用户积分更新成功，+50分
+[DEBUG] 请求追踪: trace_id=abc123xyz
+[INFO] 批量操作完成: 更新库存
+[WARN] API 配额即将耗尽，剩余: 5%
+[ERROR] 交易验证失败: 签名不匹配
+[INFO] 数据归档完成，归档日期: 2024-05-01
+[DEBUG] 权限检查通过: role: admin
+[INFO] 用户反馈已提交，ticket_id: TK-4567
+[WARN] 异步任务延迟处理，队列深度: 150
+[ERROR] 支付渠道不可用: alipay
+[INFO] 系统自检完成，所有模块正常
+[DEBUG] 请求去重: 指纹: fp_7d8f9e
+[INFO] 产品目录更新完成
+[WARN] 并发请求数接近上限
+[ERROR] 缓存雪崩检测
+[INFO] 数据库迁移完成，版本: 2024052001
+[DEBUG] 响应时间: p50=80ms, p95=250ms, p99=500ms
+[INFO] 用户导出任务完成，records: 10000
+[WARN] 存储桶访问权限变更
+[ERROR] 定时任务执行失败: job: cleanup_temp
+[INFO] API 文档更新完成
+[DEBUG] 用户会话数量: 1,234
+[INFO] 批量消息推送成功
+[WARN] 检测到 SQL 注入尝试，已拦截
+[ERROR] 主从同步延迟，lag: 5s
+[INFO] 系统重启完成，耗时: 12s
+[DEBUG] 中间件链: logger → auth → rate_limit
+[INFO] 优惠券核销完成，code: WELCOME2024
+[WARN] 日志写入延迟
+[ERROR] 数据库连接池耗尽
+[INFO] 用户分组更新完成
+[DEBUG] 请求大小: 15KB
+[INFO] 系统监控报告已发送
+[WARN] 备份服务响应慢
+[ERROR] Token 刷新失败: refresh_token无效
+[INFO] 数据恢复完成，恢复记录: 5,678
+[INFO] 服务启动成功
+[ERROR] 数据库连接失败
+[WARN] 接口响应过慢
+[INFO] 用户 vichel 登录成功
+[ERROR] 支付回调异常
+[INFO] 请求结束
+[INFO] 系统初始化完成，监听端口 3000
+[DEBUG] 接收请求 GET /api/users - 127.0.0.1
+[INFO] 用户查询成功，返回 25 条记录
+[WARN] 内存使用率超过 75%，当前: 76%
+[ERROR] Redis 连接超时，尝试重连中...
+[INFO] 任务队列 worker-1 启动成功
+[DEBUG] 处理订单 #12345，状态: pending
+[INFO] 订单创建成功，订单ID: ORD-2024-001
+[WARN] 第三方API响应时间过长: 2500ms
+[ERROR] 文件上传失败: 文件过大 (15MB)
+[INFO] 用户 admin 登录成功
+[DEBUG] 缓存命中，key: user_profile_100
+[INFO] 数据库备份任务开始执行
+[WARN] 磁盘空间不足，剩余: 5GB
+[ERROR] JWT token 验证失败
+[INFO] 邮件发送成功，收件人: user@example.com
+[DEBUG] 查询耗时 120ms，SQL: SELECT * FROM products
+[WARN] API 请求频率接近限制，已处理: 950/1000
+[ERROR] 支付网关不可用，降级处理
+[INFO] 定时任务执行完成: 清理过期日志
+[DEBUG] WebSocket 连接建立，client_id: ws_456
+[INFO] 用户注销成功，user_id: 789
+[WARN] 未知请求路径: /api/legacy/endpoint
+[ERROR] 数据库查询超时 (30s)
+[INFO] 文件清理完成，释放空间: 2.3GB
+[DEBUG] 缓存更新，key: product_categories
+[INFO] 批量导入完成，成功: 450，失败: 5
+[WARN] 重复登录尝试，user_id: 123
+[ERROR] CSV 解析错误: 第 102 行格式错误
+[INFO] 索引重建完成，表: orders
+[DEBUG] 请求参数验证通过
+[INFO] 用户注册成功，user_id: 10001
+[WARN] 敏感操作: 用户修改密码
+[ERROR] 外部服务调用失败: payment_service
+[INFO] 系统健康检查通过
+[DEBUG] 分页查询，page: 1, limit: 20
+[INFO] 会话续期成功，session_id: sess_abc123
+[WARN] 检测到爬虫行为，IP: 192.168.1.100
+[ERROR] 数据完整性校验失败
+[INFO] 促销活动已激活，code: SUMMER2024
+[DEBUG] 调用外部API: https://api.example.com/data
+[INFO] 数据同步完成，新增记录: 1250
+[WARN] 配置文件热更新，重启部分服务
+[ERROR] 内存泄漏检测，模块: auth_service
+[INFO] 用户资料更新成功，user_id: 5432
+[DEBUG] 限流检查通过，token: api_key_xyz
+[INFO] 退款处理完成，order_id: ORD-9876
+[WARN] 依赖服务响应变慢: notification_service
+[ERROR] 队列消息处理失败，重试次数: 3/5
+[INFO] 系统升级完成，版本: v2.5.0
+[DEBUG] 访问令牌刷新成功
+[INFO] 管理员操作日志: 删除用户 #567
+[WARN] SSL证书即将过期，剩余天数: 7
+[ERROR] 邮件服务连接失败
+[INFO] 搜索索引更新完成
+[DEBUG] 请求头解析: Authorization: Bearer ***
+[INFO] 用户偏好设置已保存
+[WARN] 账户余额不足，user_id: 333
+[ERROR] JSON 解析错误: Unexpected token
+[INFO] 报表生成完成: monthly_sales_2024.pdf
+[DEBUG] 中间件执行: rate_limiter
+[INFO] 批量通知发送完成，成功: 89
+[WARN] API 版本已弃用: v1，请使用 v2
+[ERROR] 数据库死锁检测，回滚事务
+[INFO] 账户激活成功，email: newuser@test.com
+[DEBUG] 响应压缩: gzip，原始: 50KB
+[INFO] 系统负载正常: CPU 45%, MEM 62%
+[WARN] 检测到可疑登录尝试
+[ERROR] 文件权限错误: /var/log/app.log
+[INFO] A/B 测试配置更新，实验: exp_new_ui
+[DEBUG] 数据库连接池状态: 8/20
+[INFO] 用户订阅续费成功，plan: premium
+[WARN] 缓存预热中，预计完成: 30s
+[ERROR] API Gateway 超时
+[INFO] 队列任务已重新分配
+[DEBUG] Session 存储: 内存缓存
+[INFO] 第三方回调验证通过，source: stripe
+[WARN] 请求体过大: 2MB
+[ERROR] 域名解析失败: api.backup.com
+[INFO] 用户迁移完成，从旧系统迁移
+[DEBUG] SQL 执行计划优化
+[INFO] 推荐系统更新完成
+[WARN] 检测到重复请求，request_id: req_123
+[ERROR] 数据一致性检查失败
+[INFO] 定时任务调度完成: send_daily_report
+[DEBUG] 响应缓存失效，key: home_page_data
+[INFO] 系统维护模式已关闭
+[WARN] 监控告警恢复: CPU_NORMAL
+[ERROR] WebSocket 连接异常断开
+[INFO] 用户积分更新成功，+50分
+[DEBUG] 请求追踪: trace_id=abc123xyz
+[INFO] 批量操作完成: 更新库存
+[WARN] API 配额即将耗尽，剩余: 5%
+[ERROR] 交易验证失败: 签名不匹配
+[INFO] 数据归档完成，归档日期: 2024-05-01
+[DEBUG] 权限检查通过: role: admin
+[INFO] 用户反馈已提交，ticket_id: TK-4567
+[WARN] 异步任务延迟处理，队列深度: 150
+[ERROR] 支付渠道不可用: alipay
+[INFO] 系统自检完成，所有模块正常
+[DEBUG] 请求去重: 指纹: fp_7d8f9e
+[INFO] 产品目录更新完成
+[WARN] 并发请求数接近上限
+[ERROR] 缓存雪崩检测
+[INFO] 数据库迁移完成，版本: 2024052001
+[DEBUG] 响应时间: p50=80ms, p95=250ms, p99=500ms
+[INFO] 用户导出任务完成，records: 10000
+[WARN] 存储桶访问权限变更
+[ERROR] 定时任务执行失败: job: cleanup_temp
+[INFO] API 文档更新完成
+[DEBUG] 用户会话数量: 1,234
+[INFO] 批量消息推送成功
+[WARN] 检测到 SQL 注入尝试，已拦截
+[ERROR] 主从同步延迟，lag: 5s
+[INFO] 系统重启完成，耗时: 12s
+[DEBUG] 中间件链: logger → auth → rate_limit
+[INFO] 优惠券核销完成，code: WELCOME2024
+[WARN] 日志写入延迟
+[ERROR] 数据库连接池耗尽
+[INFO] 用户分组更新完成
+[DEBUG] 请求大小: 15KB
+[INFO] 系统监控报告已发送
+[WARN] 备份服务响应慢
+[ERROR] Token 刷新失败: refresh_token无效
+[INFO] 数据恢复完成，恢复记录: 5,678
+[INFO] 服务启动成功
+[ERROR] 数据库连接失败
+[WARN] 接口响应过慢
+[INFO] 用户 vichel 登录成功
+[ERROR] 支付回调异常
+[INFO] 请求结束
+[INFO] 系统初始化完成，监听端口 3000
+[DEBUG] 接收请求 GET /api/users - 127.0.0.1
+[INFO] 用户查询成功，返回 25 条记录
+[WARN] 内存使用率超过 75%，当前: 76%
+[ERROR] Redis 连接超时，尝试重连中...
+[INFO] 任务队列 worker-1 启动成功
+[DEBUG] 处理订单 #12345，状态: pending
+[INFO] 订单创建成功，订单ID: ORD-2024-001
+[WARN] 第三方API响应时间过长: 2500ms
+[ERROR] 文件上传失败: 文件过大 (15MB)
+[INFO] 用户 admin 登录成功
+[DEBUG] 缓存命中，key: user_profile_100
+[INFO] 数据库备份任务开始执行
+[WARN] 磁盘空间不足，剩余: 5GB
+[ERROR] JWT token 验证失败
+[INFO] 邮件发送成功，收件人: user@example.com
+[DEBUG] 查询耗时 120ms，SQL: SELECT * FROM products
+[WARN] API 请求频率接近限制，已处理: 950/1000
+[ERROR] 支付网关不可用，降级处理
+[INFO] 定时任务执行完成: 清理过期日志
+[DEBUG] WebSocket 连接建立，client_id: ws_456
+[INFO] 用户注销成功，user_id: 789
+[WARN] 未知请求路径: /api/legacy/endpoint
+[ERROR] 数据库查询超时 (30s)
+[INFO] 文件清理完成，释放空间: 2.3GB
+[DEBUG] 缓存更新，key: product_categories
+[INFO] 批量导入完成，成功: 450，失败: 5
+[WARN] 重复登录尝试，user_id: 123
+[ERROR] CSV 解析错误: 第 102 行格式错误
+[INFO] 索引重建完成，表: orders
+[DEBUG] 请求参数验证通过
+[INFO] 用户注册成功，user_id: 10001
+[WARN] 敏感操作: 用户修改密码
+[ERROR] 外部服务调用失败: payment_service
+[INFO] 系统健康检查通过
+[DEBUG] 分页查询，page: 1, limit: 20
+[INFO] 会话续期成功，session_id: sess_abc123
+[WARN] 检测到爬虫行为，IP: 192.168.1.100
+[ERROR] 数据完整性校验失败
+[INFO] 促销活动已激活，code: SUMMER2024
+[DEBUG] 调用外部API: https://api.example.com/data
+[INFO] 数据同步完成，新增记录: 1250
+[WARN] 配置文件热更新，重启部分服务
+[ERROR] 内存泄漏检测，模块: auth_service
+[INFO] 用户资料更新成功，user_id: 5432
+[DEBUG] 限流检查通过，token: api_key_xyz
+[INFO] 退款处理完成，order_id: ORD-9876
+[WARN] 依赖服务响应变慢: notification_service
+[ERROR] 队列消息处理失败，重试次数: 3/5
+[INFO] 系统升级完成，版本: v2.5.0
+[DEBUG] 访问令牌刷新成功
+[INFO] 管理员操作日志: 删除用户 #567
+[WARN] SSL证书即将过期，剩余天数: 7
+[ERROR] 邮件服务连接失败
+[INFO] 搜索索引更新完成
+[DEBUG] 请求头解析: Authorization: Bearer ***
+[INFO] 用户偏好设置已保存
+[WARN] 账户余额不足，user_id: 333
+[ERROR] JSON 解析错误: Unexpected token
+[INFO] 报表生成完成: monthly_sales_2024.pdf
+[DEBUG] 中间件执行: rate_limiter
+[INFO] 批量通知发送完成，成功: 89
+[WARN] API 版本已弃用: v1，请使用 v2
+[ERROR] 数据库死锁检测，回滚事务
+[INFO] 账户激活成功，email: newuser@test.com
+[DEBUG] 响应压缩: gzip，原始: 50KB
+[INFO] 系统负载正常: CPU 45%, MEM 62%
+[WARN] 检测到可疑登录尝试
+[ERROR] 文件权限错误: /var/log/app.log
+[INFO] A/B 测试配置更新，实验: exp_new_ui
+[DEBUG] 数据库连接池状态: 8/20
+[INFO] 用户订阅续费成功，plan: premium
+[WARN] 缓存预热中，预计完成: 30s
+[ERROR] API Gateway 超时
+[INFO] 队列任务已重新分配
+[DEBUG] Session 存储: 内存缓存
+[INFO] 第三方回调验证通过，source: stripe
+[WARN] 请求体过大: 2MB
+[ERROR] 域名解析失败: api.backup.com
+[INFO] 用户迁移完成，从旧系统迁移
+[DEBUG] SQL 执行计划优化
+[INFO] 推荐系统更新完成
+[WARN] 检测到重复请求，request_id: req_123
+[ERROR] 数据一致性检查失败
+[INFO] 定时任务调度完成: send_daily_report
+[DEBUG] 响应缓存失效，key: home_page_data
+[INFO] 系统维护模式已关闭
+[WARN] 监控告警恢复: CPU_NORMAL
+[ERROR] WebSocket 连接异常断开
+[INFO] 用户积分更新成功，+50分
+[DEBUG] 请求追踪: trace_id=abc123xyz
+[INFO] 批量操作完成: 更新库存
+[WARN] API 配额即将耗尽，剩余: 5%
+[ERROR] 交易验证失败: 签名不匹配
+[INFO] 数据归档完成，归档日期: 2024-05-01
+[DEBUG] 权限检查通过: role: admin
+[INFO] 用户反馈已提交，ticket_id: TK-4567
+[WARN] 异步任务延迟处理，队列深度: 150
+[ERROR] 支付渠道不可用: alipay
+[INFO] 系统自检完成，所有模块正常
+[DEBUG] 请求去重: 指纹: fp_7d8f9e
+[INFO] 产品目录更新完成
+[WARN] 并发请求数接近上限
+[ERROR] 缓存雪崩检测
+[INFO] 数据库迁移完成，版本: 2024052001
+[DEBUG] 响应时间: p50=80ms, p95=250ms, p99=500ms
+[INFO] 用户导出任务完成，records: 10000
+[WARN] 存储桶访问权限变更
+[ERROR] 定时任务执行失败: job: cleanup_temp
+[INFO] API 文档更新完成
+[DEBUG] 用户会话数量: 1,234
+[INFO] 批量消息推送成功
+[WARN] 检测到 SQL 注入尝试，已拦截
+[ERROR] 主从同步延迟，lag: 5s
+[INFO] 系统重启完成，耗时: 12s
+[DEBUG] 中间件链: logger → auth → rate_limit
+[INFO] 优惠券核销完成，code: WELCOME2024
+[WARN] 日志写入延迟
+[ERROR] 数据库连接池耗尽
+[INFO] 用户分组更新完成
+[DEBUG] 请求大小: 15KB
+[INFO] 系统监控报告已发送
+[WARN] 备份服务响应慢
+[ERROR] Token 刷新失败: refresh_token无效
+[INFO] 数据恢复完成，恢复记录: 5,678
+[INFO] 服务启动成功
+[ERROR] 数据库连接失败
+[WARN] 接口响应过慢
+[INFO] 用户 vichel 登录成功
+[ERROR] 支付回调异常
+[INFO] 请求结束
+[INFO] 系统初始化完成，监听端口 3000
+[DEBUG] 接收请求 GET /api/users - 127.0.0.1
+[INFO] 用户查询成功，返回 25 条记录
+[WARN] 内存使用率超过 75%，当前: 76%
+[ERROR] Redis 连接超时，尝试重连中...
+[INFO] 任务队列 worker-1 启动成功
+[DEBUG] 处理订单 #12345，状态: pending
+[INFO] 订单创建成功，订单ID: ORD-2024-001
+[WARN] 第三方API响应时间过长: 2500ms
+[ERROR] 文件上传失败: 文件过大 (15MB)
+[INFO] 用户 admin 登录成功
+[DEBUG] 缓存命中，key: user_profile_100
+[INFO] 数据库备份任务开始执行
+[WARN] 磁盘空间不足，剩余: 5GB
+[ERROR] JWT token 验证失败
+[INFO] 邮件发送成功，收件人: user@example.com
+[DEBUG] 查询耗时 120ms，SQL: SELECT * FROM products
+[WARN] API 请求频率接近限制，已处理: 950/1000
+[ERROR] 支付网关不可用，降级处理
+[INFO] 定时任务执行完成: 清理过期日志
+[DEBUG] WebSocket 连接建立，client_id: ws_456
+[INFO] 用户注销成功，user_id: 789
+[WARN] 未知请求路径: /api/legacy/endpoint
+[ERROR] 数据库查询超时 (30s)
+[INFO] 文件清理完成，释放空间: 2.3GB
+[DEBUG] 缓存更新，key: product_categories
+[INFO] 批量导入完成，成功: 450，失败: 5
+[WARN] 重复登录尝试，user_id: 123
+[ERROR] CSV 解析错误: 第 102 行格式错误
+[INFO] 索引重建完成，表: orders
+[DEBUG] 请求参数验证通过
+[INFO] 用户注册成功，user_id: 10001
+[WARN] 敏感操作: 用户修改密码
+[ERROR] 外部服务调用失败: payment_service
+[INFO] 系统健康检查通过
+[DEBUG] 分页查询，page: 1, limit: 20
+[INFO] 会话续期成功，session_id: sess_abc123
+[WARN] 检测到爬虫行为，IP: 192.168.1.100
+[ERROR] 数据完整性校验失败
+[INFO] 促销活动已激活，code: SUMMER2024
+[DEBUG] 调用外部API: https://api.example.com/data
+[INFO] 数据同步完成，新增记录: 1250
+[WARN] 配置文件热更新，重启部分服务
+[ERROR] 内存泄漏检测，模块: auth_service
+[INFO] 用户资料更新成功，user_id: 5432
+[DEBUG] 限流检查通过，token: api_key_xyz
+[INFO] 退款处理完成，order_id: ORD-9876
+[WARN] 依赖服务响应变慢: notification_service
+[ERROR] 队列消息处理失败，重试次数: 3/5
+[INFO] 系统升级完成，版本: v2.5.0
+[DEBUG] 访问令牌刷新成功
+[INFO] 管理员操作日志: 删除用户 #567
+[WARN] SSL证书即将过期，剩余天数: 7
+[ERROR] 邮件服务连接失败
+[INFO] 搜索索引更新完成
+[DEBUG] 请求头解析: Authorization: Bearer ***
+[INFO] 用户偏好设置已保存
+[WARN] 账户余额不足，user_id: 333
+[ERROR] JSON 解析错误: Unexpected token
+[INFO] 报表生成完成: monthly_sales_2024.pdf
+[DEBUG] 中间件执行: rate_limiter
+[INFO] 批量通知发送完成，成功: 89
+[WARN] API 版本已弃用: v1，请使用 v2
+[ERROR] 数据库死锁检测，回滚事务
+[INFO] 账户激活成功，email: newuser@test.com
+[DEBUG] 响应压缩: gzip，原始: 50KB
+[INFO] 系统负载正常: CPU 45%, MEM 62%
+[WARN] 检测到可疑登录尝试
+[ERROR] 文件权限错误: /var/log/app.log
+[INFO] A/B 测试配置更新，实验: exp_new_ui
+[DEBUG] 数据库连接池状态: 8/20
+[INFO] 用户订阅续费成功，plan: premium
+[WARN] 缓存预热中，预计完成: 30s
+[ERROR] API Gateway 超时
+[INFO] 队列任务已重新分配
+[DEBUG] Session 存储: 内存缓存
+[INFO] 第三方回调验证通过，source: stripe
+[WARN] 请求体过大: 2MB
+[ERROR] 域名解析失败: api.backup.com
+[INFO] 用户迁移完成，从旧系统迁移
+[DEBUG] SQL 执行计划优化
+[INFO] 推荐系统更新完成
+[WARN] 检测到重复请求，request_id: req_123
+[ERROR] 数据一致性检查失败
+[INFO] 定时任务调度完成: send_daily_report
+[DEBUG] 响应缓存失效，key: home_page_data
+[INFO] 系统维护模式已关闭
+[WARN] 监控告警恢复: CPU_NORMAL
+[ERROR] WebSocket 连接异常断开
+[INFO] 用户积分更新成功，+50分
+[DEBUG] 请求追踪: trace_id=abc123xyz
+[INFO] 批量操作完成: 更新库存
+[WARN] API 配额即将耗尽，剩余: 5%
+[ERROR] 交易验证失败: 签名不匹配
+[INFO] 数据归档完成，归档日期: 2024-05-01
+[DEBUG] 权限检查通过: role: admin
+[INFO] 用户反馈已提交，ticket_id: TK-4567
+[WARN] 异步任务延迟处理，队列深度: 150
+[ERROR] 支付渠道不可用: alipay
+[INFO] 系统自检完成，所有模块正常
+[DEBUG] 请求去重: 指纹: fp_7d8f9e
+[INFO] 产品目录更新完成
+[WARN] 并发请求数接近上限
+[ERROR] 缓存雪崩检测
+[INFO] 数据库迁移完成，版本: 2024052001
+[DEBUG] 响应时间: p50=80ms, p95=250ms, p99=500ms
+[INFO] 用户导出任务完成，records: 10000
+[WARN] 存储桶访问权限变更
+[ERROR] 定时任务执行失败: job: cleanup_temp
+[INFO] API 文档更新完成
+[DEBUG] 用户会话数量: 1,234
+[INFO] 批量消息推送成功
+[WARN] 检测到 SQL 注入尝试，已拦截
+[ERROR] 主从同步延迟，lag: 5s
+[INFO] 系统重启完成，耗时: 12s
+[DEBUG] 中间件链: logger → auth → rate_limit
+[INFO] 优惠券核销完成，code: WELCOME2024
+[WARN] 日志写入延迟
+[ERROR] 数据库连接池耗尽
+[INFO] 用户分组更新完成
+[DEBUG] 请求大小: 15KB
+[INFO] 系统监控报告已发送
+[WARN] 备份服务响应慢
+[ERROR] Token 刷新失败: refresh_token无效
+[INFO] 数据恢复完成，恢复记录: 5,678
+[INFO] 服务启动成功
+[ERROR] 数据库连接失败
+[WARN] 接口响应过慢
+[INFO] 用户 vichel 登录成功
+[ERROR] 支付回调异常
+[INFO] 请求结束
+[INFO] 系统初始化完成，监听端口 3000
+[DEBUG] 接收请求 GET /api/users - 127.0.0.1
+[INFO] 用户查询成功，返回 25 条记录
+[WARN] 内存使用率超过 75%，当前: 76%
+[ERROR] Redis 连接超时，尝试重连中...
+[INFO] 任务队列 worker-1 启动成功
+[DEBUG] 处理订单 #12345，状态: pending
+[INFO] 订单创建成功，订单ID: ORD-2024-001
+[WARN] 第三方API响应时间过长: 2500ms
+[ERROR] 文件上传失败: 文件过大 (15MB)
+[INFO] 用户 admin 登录成功
+[DEBUG] 缓存命中，key: user_profile_100
+[INFO] 数据库备份任务开始执行
+[WARN] 磁盘空间不足，剩余: 5GB
+[ERROR] JWT token 验证失败
+[INFO] 邮件发送成功，收件人: user@example.com
+[DEBUG] 查询耗时 120ms，SQL: SELECT * FROM products
+[WARN] API 请求频率接近限制，已处理: 950/1000
+[ERROR] 支付网关不可用，降级处理
+[INFO] 定时任务执行完成: 清理过期日志
+[DEBUG] WebSocket 连接建立，client_id: ws_456
+[INFO] 用户注销成功，user_id: 789
+[WARN] 未知请求路径: /api/legacy/endpoint
+[ERROR] 数据库查询超时 (30s)
+[INFO] 文件清理完成，释放空间: 2.3GB
+[DEBUG] 缓存更新，key: product_categories
+[INFO] 批量导入完成，成功: 450，失败: 5
+[WARN] 重复登录尝试，user_id: 123
+[ERROR] CSV 解析错误: 第 102 行格式错误
+[INFO] 索引重建完成，表: orders
+[DEBUG] 请求参数验证通过
+[INFO] 用户注册成功，user_id: 10001
+[WARN] 敏感操作: 用户修改密码
+[ERROR] 外部服务调用失败: payment_service
+[INFO] 系统健康检查通过
+[DEBUG] 分页查询，page: 1, limit: 20
+[INFO] 会话续期成功，session_id: sess_abc123
+[WARN] 检测到爬虫行为，IP: 192.168.1.100
+[ERROR] 数据完整性校验失败
+[INFO] 促销活动已激活，code: SUMMER2024
+[DEBUG] 调用外部API: https://api.example.com/data
+[INFO] 数据同步完成，新增记录: 1250
+[WARN] 配置文件热更新，重启部分服务
+[ERROR] 内存泄漏检测，模块: auth_service
+[INFO] 用户资料更新成功，user_id: 5432
+[DEBUG] 限流检查通过，token: api_key_xyz
+[INFO] 退款处理完成，order_id: ORD-9876
+[WARN] 依赖服务响应变慢: notification_service
+[ERROR] 队列消息处理失败，重试次数: 3/5
+[INFO] 系统升级完成，版本: v2.5.0
+[DEBUG] 访问令牌刷新成功
+[INFO] 管理员操作日志: 删除用户 #567
+[WARN] SSL证书即将过期，剩余天数: 7
+[ERROR] 邮件服务连接失败
+[INFO] 搜索索引更新完成
+[DEBUG] 请求头解析: Authorization: Bearer ***
+[INFO] 用户偏好设置已保存
+[WARN] 账户余额不足，user_id: 333
+[ERROR] JSON 解析错误: Unexpected token
+[INFO] 报表生成完成: monthly_sales_2024.pdf
+[DEBUG] 中间件执行: rate_limiter
+[INFO] 批量通知发送完成，成功: 89
+[WARN] API 版本已弃用: v1，请使用 v2
+[ERROR] 数据库死锁检测，回滚事务
+[INFO] 账户激活成功，email: newuser@test.com
+[DEBUG] 响应压缩: gzip，原始: 50KB
+[INFO] 系统负载正常: CPU 45%, MEM 62%
+[WARN] 检测到可疑登录尝试
+[ERROR] 文件权限错误: /var/log/app.log
+[INFO] A/B 测试配置更新，实验: exp_new_ui
+[DEBUG] 数据库连接池状态: 8/20
+[INFO] 用户订阅续费成功，plan: premium
+[WARN] 缓存预热中，预计完成: 30s
+[ERROR] API Gateway 超时
+[INFO] 队列任务已重新分配
+[DEBUG] Session 存储: 内存缓存
+[INFO] 第三方回调验证通过，source: stripe
+[WARN] 请求体过大: 2MB
+[ERROR] 域名解析失败: api.backup.com
+[INFO] 用户迁移完成，从旧系统迁移
+[DEBUG] SQL 执行计划优化
+[INFO] 推荐系统更新完成
+[WARN] 检测到重复请求，request_id: req_123
+[ERROR] 数据一致性检查失败
+[INFO] 定时任务调度完成: send_daily_report
+[DEBUG] 响应缓存失效，key: home_page_data
+[INFO] 系统维护模式已关闭
+[WARN] 监控告警恢复: CPU_NORMAL
+[ERROR] WebSocket 连接异常断开
+[INFO] 用户积分更新成功，+50分
+[DEBUG] 请求追踪: trace_id=abc123xyz
+[INFO] 批量操作完成: 更新库存
+[WARN] API 配额即将耗尽，剩余: 5%
+[ERROR] 交易验证失败: 签名不匹配
+[INFO] 数据归档完成，归档日期: 2024-05-01
+[DEBUG] 权限检查通过: role: admin
+[INFO] 用户反馈已提交，ticket_id: TK-4567
+[WARN] 异步任务延迟处理，队列深度: 150
+[ERROR] 支付渠道不可用: alipay
+[INFO] 系统自检完成，所有模块正常
+[DEBUG] 请求去重: 指纹: fp_7d8f9e
+[INFO] 产品目录更新完成
+[WARN] 并发请求数接近上限
+[ERROR] 缓存雪崩检测
+[INFO] 数据库迁移完成，版本: 2024052001
+[DEBUG] 响应时间: p50=80ms, p95=250ms, p99=500ms
+[INFO] 用户导出任务完成，records: 10000
+[WARN] 存储桶访问权限变更
+[ERROR] 定时任务执行失败: job: cleanup_temp
+[INFO] API 文档更新完成
+[DEBUG] 用户会话数量: 1,234
+[INFO] 批量消息推送成功
+[WARN] 检测到 SQL 注入尝试，已拦截
+[ERROR] 主从同步延迟，lag: 5s
+[INFO] 系统重启完成，耗时: 12s
+[DEBUG] 中间件链: logger → auth → rate_limit
+[INFO] 优惠券核销完成，code: WELCOME2024
+[WARN] 日志写入延迟
+[ERROR] 数据库连接池耗尽
+[INFO] 用户分组更新完成
+[DEBUG] 请求大小: 15KB
+[INFO] 系统监控报告已发送
+[WARN] 备份服务响应慢
+[ERROR] Token 刷新失败: refresh_token无效
+[INFO] 数据恢复完成，恢复记录: 5,678
