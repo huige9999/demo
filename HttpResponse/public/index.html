@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>字节流消费策略 · demo</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- ════════════════════════ 全局标题 ════════════════════════ -->
+  <header class="page-header">
+    <h1>字节流消费策略</h1>
+    <p class="subtitle">
+      到达是同一回事，消费是另一回事。把同一根 TCP 字节流，交给不同的消费者，看「第一次可用产出」何时出现。
+    </p>
+    <p class="legend">
+      <span class="dot dot-start"></span> 流开始
+      <span class="dot dot-yield"></span> 第一次可用产出
+      <span class="dot dot-end"></span> 流结束
+    </p>
+  </header>
+
+  <main>
+    <!-- ═══════════════════ 实验 0 · 控制实验 ═══════════════════ -->
+    <section class="card" data-exp="0">
+      <div class="card-head">
+        <h2>实验 0 · 控制实验：证明「只有一种到达方式」</h2>
+        <div class="controls">
+          <label>Content-Type:
+            <select id="exp0-ct">
+              <option value="video/mp4">video/mp4</option>
+              <option value="application/json">application/json</option>
+              <option value="application/octet-stream">application/octet-stream</option>
+              <option value="text/event-stream">text/event-stream</option>
+            </select>
+          </label>
+          <label>速度:
+            <select class="speed-select" data-exp="0">
+              <option value="slow">慢 (200ms)</option>
+              <option value="mid" selected>中 (50ms)</option>
+              <option value="fast">快 (10ms)</option>
+            </select>
+          </label>
+          <button class="btn-start">开始</button>
+          <button class="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <pre class="code">const res = await fetch('/same-bytes?ct=' + ct);
+console.log(res.headers.get('content-type')); // 头一到这里就拿到了
+for await (const chunk of res.body) {          // 你自己在读流
+  logChunk(chunk);                              // 节奏完全由服务端节流决定
+}</pre>
+
+      <p class="note">预期：切 Content-Type，chunk 的到达节奏、块大小、块数量【完全一样】，变的只有那个 header 字符串。</p>
+
+      <div class="two-col">
+        <div class="col">
+          <h3>流可视化</h3>
+          <div class="stream-vis">
+            <div class="chunk-log" data-role="log"></div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <span class="progress-text">0 / 0 B</span>
+            </div>
+            <div class="ct-readout">收到 Content-Type: <code data-role="ct">—</code></div>
+          </div>
+        </div>
+        <div class="col">
+          <h3>时间线</h3>
+          <div class="timeline" data-role="timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 实验 1 · 缓冲式 ═══════════════════ -->
+    <section class="card" data-exp="1">
+      <div class="card-head">
+        <h2>实验 1 · 缓冲式消费（<code>.blob()</code> 路线）</h2>
+        <div class="controls">
+          <label>速度:
+            <select class="speed-select" data-exp="1">
+              <option value="slow">慢 (200ms)</option>
+              <option value="mid" selected>中 (50ms)</option>
+              <option value="fast">快 (10ms)</option>
+            </select>
+          </label>
+          <button class="btn-start">开始</button>
+          <button class="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <pre class="code">const chunks = [];
+for await (const chunk of res.body) {
+  chunks.push(chunk);              // 攒着……什么都不干
+}
+// —— 流到这里才结束 ——
+const blob = new Blob(chunks);
+video.src = URL.createObjectURL(blob); // 此刻才能播</pre>
+
+      <p class="note">预期：流结束【之前】<code>&lt;video&gt;</code> 一直是黑的；只有进度条在涨。流一结束，视频立刻可播 —— 「第一次可用产出」贴着「流结束」。</p>
+
+      <div class="two-col">
+        <div class="col">
+          <h3>流可视化</h3>
+          <div class="stream-vis">
+            <div class="chunk-log" data-role="log"></div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <span class="progress-text">0 / 0 B</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h3>产出区（结束前是黑屏）</h3>
+          <video data-role="output" controls></video>
+          <h3 style="margin-top:1rem">时间线</h3>
+          <div class="timeline" data-role="timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 实验 2 · 增量解析 ═══════════════════ -->
+    <section class="card" data-exp="2">
+      <div class="card-head">
+        <h2>实验 2 · 增量解析式消费（NDJSON 路线）</h2>
+        <div class="controls">
+          <label>速度:
+            <select class="speed-select" data-exp="2">
+              <option value="slow">慢 (200ms)</option>
+              <option value="mid" selected>中 (50ms)</option>
+              <option value="fast">快 (10ms)</option>
+            </select>
+          </label>
+          <button class="btn-start">开始</button>
+          <button class="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <pre class="code">let buffer = '';
+for await (const chunk of res.body) {
+  buffer += dec.decode(chunk);
+  let idx;
+  while ((idx = buffer.indexOf('\n')) !== -1) {  // 边读边切行
+    const line = buffer.slice(0, idx);
+    buffer = buffer.slice(idx + 1);
+    appendRow(JSON.parse(line));                 // 切出一行就立刻 emit
+  }
+  // buffer 里残留的「半行」留到下个 chunk 拼上再切
+}</pre>
+
+      <p class="note">预期：表格里的行一条一条蹦出来，远在流结束之前 —— 「第一次可用产出」很靠左。<br />注意：一行 JSON 可能被拆在两个 chunk 里，buffer 必须保留半行。</p>
+
+      <div class="two-col">
+        <div class="col">
+          <h3>流可视化</h3>
+          <div class="stream-vis">
+            <div class="chunk-log" data-role="log"></div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <span class="progress-text">0 / 0 B</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h3>产出区（一行行增长）</h3>
+          <div class="table-wrap">
+            <table data-role="output">
+              <thead><tr><th>#</th><th>id</th><th>name</th><th>class</th><th>score</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <h3 style="margin-top:1rem">时间线</h3>
+          <div class="timeline" data-role="timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 实验 3a · 浏览器内置消费者 ═══════════════════ -->
+    <section class="card" data-exp="3a">
+      <div class="card-head">
+        <h2>实验 3a · 增量渲染式：浏览器内置消费者（<code>&lt;video src&gt;</code>）</h2>
+        <div class="controls">
+          <label>速度:
+            <select class="speed-select" data-exp="3a">
+              <option value="slow">慢 (200ms)</option>
+              <option value="mid" selected>中 (50ms)</option>
+              <option value="fast">快 (10ms)</option>
+            </select>
+          </label>
+          <button class="btn-start">开始</button>
+          <button class="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <pre class="code">// 不写一行 JS —— 把流直接交给浏览器
+&lt;video src="/raw?speed=mid" controls&gt;&lt;/video&gt;
+// 浏览器自己发 Range 请求、自己解码、自己消费字节流，边下边播。
+// 打开 DevTools → Network，能看到 206 Partial Content。</pre>
+
+      <p class="note">预期：视频在字节还没下完时【就开始播了】（边下边播）。<br />要讲清楚：边下边播靠的是 Range 请求 + 浏览器自带的解码消费者，<strong>不是</strong> <code>Content-Type: video/mp4</code> 触发了某种「流式模式」。</p>
+
+      <div class="two-col">
+        <div class="col">
+          <h3>流可视化（监听 resource timing）</h3>
+          <div class="stream-vis">
+            <div class="chunk-log" data-role="log">
+              <div class="hint">这条流由浏览器接管，JS 读不到 chunk。<br />这里显示的是服务端节流进度与 206 状态。</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <span class="progress-text">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h3>产出区（边收边播）</h3>
+          <video data-role="output" controls></video>
+          <h3 style="margin-top:1rem">时间线</h3>
+          <div class="timeline" data-role="timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 并排时间线对比 ═══════════════════ -->
+    <section class="compare-section">
+      <h2>★ 并排对比：「第一次可用产出」落在哪</h2>
+      <p class="subtitle small">把三张时间线并排放，结论一眼可见。</p>
+      <div class="compare-grid">
+        <div class="compare-row">
+          <span class="compare-label">实验 1（缓冲式）</span>
+          <div class="compare-tl" id="cmp-1"><span class="cmp-yield cmp-yield-right">第一次可用产出 → 贴着流结束</span></div>
+        </div>
+        <div class="compare-row">
+          <span class="compare-label">实验 2（增量解析）</span>
+          <div class="compare-tl" id="cmp-2"><span class="cmp-yield cmp-yield-left">第一块就出活 →</span></div>
+        </div>
+        <div class="compare-row">
+          <span class="compare-label">实验 3（增量渲染）</span>
+          <div class="compare-tl" id="cmp-3a"><span class="cmp-yield cmp-yield-left">边收边播 →</span></div>
+        </div>
+      </div>
+      <p class="hint center">
+        把各实验都跑一遍，上面对比条会根据你实际的「第一次可用产出」时间被点亮填实。
+      </p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
