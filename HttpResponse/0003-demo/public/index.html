@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSE vs 普通流式响应</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>SSE vs 普通流式响应</h1>
+    <p class="subtitle">
+      同一段 token 序列，两种写法、两种消费方式。底层都是字节流，差别在协议与 API。
+    </p>
+    <p class="doc-link">
+      文档：<code>docs/0003-SSE响应和普通流响应.md</code>
+    </p>
+  </header>
+
+  <main class="grid">
+    <!-- SSE 卡片 -->
+    <section class="card" data-mode="sse">
+      <div class="card-head">
+        <h2>SSE · <code>EventSource</code></h2>
+        <div class="controls">
+          <label>速度:
+            <select class="speed-select">
+              <option value="slow">慢 (400ms)</option>
+              <option value="mid" selected>中 (200ms)</option>
+              <option value="fast">快 (80ms)</option>
+            </select>
+          </label>
+          <button class="btn-start">开始</button>
+          <button class="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <pre class="code">const es = new EventSource('/api/sse');
+es.onmessage = (e) => {
+  const { token } = JSON.parse(e.data);
+  output.textContent += token;
+};
+es.addEventListener('done', () => es.close());</pre>
+
+      <div class="panel">
+        <h3>产出</h3>
+        <div class="output" data-role="output"></div>
+        <h3>事件日志</h3>
+        <div class="log" data-role="log"></div>
+      </div>
+    </section>
+
+    <!-- 普通流卡片 -->
+    <section class="card" data-mode="stream">
+      <div class="card-head">
+        <h2>普通流 · <code>fetch</code> + <code>ReadableStream</code></h2>
+        <div class="controls">
+          <label>速度:
+            <select class="speed-select">
+              <option value="slow">慢 (400ms)</option>
+              <option value="mid" selected>中 (200ms)</option>
+              <option value="fast">快 (80ms)</option>
+            </select>
+          </label>
+          <button class="btn-start">开始</button>
+          <button class="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <pre class="code">const res = await fetch('/api/stream');
+const dec = new TextDecoder();
+let text = '';
+for await (const chunk of res.body) {
+  text += dec.decode(chunk, { stream: true });
+  output.textContent = text;
+}</pre>
+
+      <div class="panel">
+        <h3>产出</h3>
+        <div class="output" data-role="output"></div>
+        <h3>chunk 日志</h3>
+        <div class="log" data-role="log"></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="compare-note">
+    <h2>观察要点</h2>
+    <ul>
+      <li><strong>SSE</strong>：日志里每条都是完整的 <code>data: {...}</code> 消息；浏览器按 <code>\n\n</code> 切帧。</li>
+      <li><strong>普通流</strong>：日志里是 TCP chunk，可能一次含多个 token，也可能一个 token 拆成多块（本 demo 每次 write 一个字符，通常一块 = 一个 token）。</li>
+      <li>两者 UI 最终文本相同，但<strong>触发 UI 更新的粒度</strong>不同：SSE 按「事件」，普通流按「chunk」。</li>
+    </ul>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
